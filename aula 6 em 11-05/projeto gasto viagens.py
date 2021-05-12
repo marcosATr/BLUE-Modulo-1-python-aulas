@@ -1,4 +1,4 @@
-# PROJETO: 
+# PROJETO: bora começar
 # Gastos com viagem - Escrever uma aplicação utilizando funções que calculem os 
 # gastos com passagem, hospedagem, aluguel de carro e gastos extras
 #  de uma viagem para uma determinada cidade.
