@@ -19,6 +19,7 @@
 # -Alugando 3 dias ou +: R$ 20,00 de desconto;
 # -Você pode receber apenas um desconto;
 # -Retorne o custo.Cálculo Total4 
+
 # -Agora com essas três funções criadas, declare uma função que receba a cidade e quantidade de dias e retorne o custo total da viagem.
 # 
 # -Reutilize as funções já criadas.
@@ -28,3 +29,37 @@
 # -Modifique essa nova função criada e adicione um terceiro argumento: 'gastos_extras' e some esse valor ao total da viagem.
 # 
 # Exiba no console o custo total de uma viagem de 12 dias para 'Manaus' gastando R$ 800,00 adicionais.
+
+def custo_hotel(noites):
+    valor = noites * 140 #ajustar o valor da diária aqui
+    return valor
+
+
+def custo_aviao(cidade):
+    local = {
+        'São Paulo': 312,
+        'Porto Alegre': 447,
+        'Recife': 831,
+        'Manaus': 986,
+    }
+    preco = local[cidade]
+    return preco
+
+
+def custo_carro(noites):
+    diaria_do_carro = 40
+    aluguel = diaria_do_carro * noites
+    if noites >= 7:
+        aluguel -= 50
+    elif noites >= 3:
+        aluguel -= 20
+    return aluguel
+
+
+def funcTotal(noites, cidade, gastos_extras):
+    custo_final = custo_hotel(noites) + custo_aviao(cidade) + custo_carro(noites) + gastos_extras
+    print(f'O valor total da sua viagem foi: {custo_final}')
+
+
+funcTotal(12, 'Manaus', 800)
+
