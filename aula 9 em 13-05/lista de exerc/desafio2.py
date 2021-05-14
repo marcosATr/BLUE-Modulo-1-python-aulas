@@ -5,10 +5,9 @@
 
 n = input('digite o n de matérias: ')
 lista = []
-if n.isalpha() == True:
+if n.isdigit() == False:
     print('Número inválido')
-elif n.isdigit() == False:
-    print('Número inválido')
+
 else:
     n = int(n)
     if n <= 0:
