@@ -20,4 +20,4 @@ else:
 
         print(lista)
         media = sum(lista) / n
-        print(f'{media:.2f}')
+        print(f'média: {media:.2f}')
