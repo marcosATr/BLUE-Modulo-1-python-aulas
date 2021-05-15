@@ -19,7 +19,9 @@ e = input("Já trabalhou com a vítima? " ).lower()
 respostas = [a, b, c, d, e]
 sims = respostas.count("sim")
 
-if sims == 2:
+if sims < 2:
+    print('suspeito')
+elif sims == 2:
     print('suspeito')
 elif sims == 3 or sims == 4:
     print('cúmplice')
