@@ -1,4 +1,4 @@
-#DESAFIO:
+# DESAFIO:
 
 # Em uma eleição presidencial existem quatro candidatos. Os votos são informados por meio de código. 
 
