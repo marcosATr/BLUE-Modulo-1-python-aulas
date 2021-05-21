@@ -9,6 +9,6 @@ resultados = {
 }
 print(resultados)
 ordenado = dict()
-ordenado = sorted(resultados.items(), key=lambda item: item[1], reverse=True)
+ordenado = sorted(resultados.items(), key=lambda j: j[1], reverse=True)
 for i in ordenado:
     print(f'{i[0].capitalize()} fez {i[1]} pontos.')
