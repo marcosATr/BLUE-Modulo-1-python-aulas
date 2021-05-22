@@ -4,45 +4,39 @@
 # C) Uma lista com as mulheres.​
 # D) Uma lista com as idades que estão acima da média.​
 # OBS: O programa deve garantir que o sexo digitado seja válido, e que quando perguntar ao usuário se deseja continuar a resposta seja somente sim ou não.​
-
-lista = []
+lista = [] #foi
+idades = [] #foi
+mulheres = [] #foi
+acimaDaMedia = []
 while True:
     nome = input('Digite o nome: ')
-    idade = input('Digite a idade: ')
-    while not idade.isdigit():
-        idade = input('Idade INCORRETA, tentenovamente: ')
-    idade = int(idade)
-    sexo =  input('Digite o sexo: [M/F]: ').upper()[0]
+    idade = int(input('Digite a idade: '))
+    sexo = input('''
+    [ M ] = MASCULINO
+    [ F ] = FEMININO
+    Digite a opção correspondente ao sexo: 
+    ''').upper()[0]
     while sexo not in 'MF':
         sexo = input('Sexo incorreto, tente novamente [M/F]: ').upper()[0]
-    continuar = input('Continuar? [S/N]: ').upper()[0]
     dicio = {
         'nome': nome,
         'idade': idade,
         'sexo': sexo
     }
     lista.append(dicio)
+    idades.append(idade)
+    if sexo in 'F':
+        mulheres.append(nome)
+    continuar = input('Continuar? [S/N] ').upper()[0]
     if continuar not in 'S':
         break
-print(lista)
-#LISTA COM MULHERES:
-lista_fem = []
-print(f'A quantidade de pessoas cadastradas foi {len(lista)}')
-for i in range(0, len(lista)):
-    fem = lista[i]['sexo']
-    if fem in 'F':
-        lista_fem.append(lista[i]['nome'])
-print('A lista feminina é:')
-print(lista_fem)
-#LISTA COM AS IDADES ACIMA DA MÉDIA:
-lista_mais_velhos = []
-soma = 0
-for j in range(0, len(lista)):
-    soma += lista[j]['idade']
-media = soma / len(lista)
-print(f'A média de idades é {media:.2f}') #MOSTRA A MÉDIA
-for j in range(0, len(lista)):
-    if lista[j]['idade'] > media:
-        lista_mais_velhos.append(lista[j]['nome'])
-print('A lista dos mais velhos é:')        
-print(lista_mais_velhos)
+
+media = sum(idades)/len(lista)
+for i in idades:
+    if i > media:
+        acimaDaMedia.append(i)
+
+print(f'O número de cadastrados é {len(lista)}')
+print(f'A média de idades é {media}.')
+print(f'A lista apenas com mulheres é:\n{mulheres}')
+print(f'A lista com as idades acima da média é:\n{acimaDaMedia}')

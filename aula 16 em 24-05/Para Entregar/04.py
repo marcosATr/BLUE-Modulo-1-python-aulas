@@ -31,4 +31,4 @@ def func_data(_date):
         print(f'Data: {day} de {month} de {year}')
 
 
-func_data('26/02/0008')
+func_data('26/02/2008')
