@@ -4,7 +4,7 @@ def func_data(_date):
     lista_meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     lista_dias = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     try:
-        #variaveis e fatiamento das strings
+        #FATIAMENTO DE STRINGS
         day = int(_date[:2])
         month = int(_date[3:5])
         year = int(_date[-4:])
@@ -17,8 +17,8 @@ def func_data(_date):
         ano_bissexto = True
         lista_dias.pop(1)
         lista_dias.insert(1, 29)
-    #SUBSTITUINDO POR MÊS POR EXTENSO:
-    posicao = month -1 #porque a lista começa com index 0
+    #PEGANDO AS POSIÇÕES PARA FAZER A EQUIVALÊNCIA.
+    posicao = month -1 #porque a lista começa com index 0!
     #VALIDAÇÃO extra DA DATA:
     if not 0 < day <= lista_dias[posicao]:
         print('Dia inválido.')

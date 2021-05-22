@@ -5,7 +5,6 @@ def funcSenha():
     senha_usuario = input('Digite a senha para entrar: ')
     if senha_usuario != senha:
         print('\nSenha incorreta, tente novamente: ')
-        #senha_usuario = input('Digite a senha para entrar: ')
         funcSenha()
     else:
         print('\nUsuário entrou com sucesso')
