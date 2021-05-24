@@ -8,7 +8,7 @@ def retirar_vogais(frase):
         count = frase.count(i)
         dicio_vogais[i] = count
     total = sum(dicio_vogais.values())
-    print(f'O total de vogais é na frase: {total}\n')
+    print(f'O total de vogais a serem retiradas da frase: {total}\n')
     print(f'As vogais aparecem da seguinte maneira:\n{dicio_vogais}\n')
     ###### REMOVENDO AS VOGAIS:
     for j in frase:
